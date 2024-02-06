@@ -1,0 +1,32 @@
+[
+    {
+        "name": "CelebratingSurfing",
+        "path": "/wallpaper/CelebratingSurfing.jpg"
+    },
+    {
+        "name": "CrestedButteEclispe",
+        "path": "/wallpaper/CrestedButteEclispe.jpg"
+    },
+    { "name": "EuropeFromISS", "path": "/wallpaper/EuropeFromISS.jpg" },
+    { "name": "MountSegla", "path": "/wallpaper/MountSegla.jpg" },
+    { "name": "PalouseHills", "path": "/wallpaper/PalouseHills.jpg" },
+    { "name": "Perihelion", "path": "/wallpaper/Perihelion.jpg" },
+    { "name": "QingMing2023", "path": "/wallpaper/QingMing2023.jpg" },
+    { "name": "RedPlanetDay", "path": "/wallpaper/RedPlanetDay.jpg" },
+    {
+        "name": "SanBlasIslands",
+        "path": "/wallpaper/SanBlasIslands.jpg"
+    },
+    { "name": "sun", "path": "/wallpaper/sun.webp" },
+    {
+        "name": "TarantulaNebula",
+        "path": "/wallpaper/TarantulaNebula.jpg"
+    },
+    { "name": "TeideNational", "path": "/wallpaper/TeideNational.jpg" },
+    {
+        "name": "ThreeElephants",
+        "path": "/wallpaper/ThreeElephants.jpg"
+    },
+    { "name": "TwoJackLake", "path": "/wallpaper/TwoJackLake.jpg" },
+    { "name": "WaningGibbous", "path": "/wallpaper/WaningGibbous.jpg" }
+]

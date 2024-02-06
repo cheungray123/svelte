@@ -4,3 +4,9 @@
 #root {
     @apply absolute h-screen w-screen overflow-hidden indent-0;
 }
+.scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded bg-gray-300;
+}

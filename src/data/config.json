@@ -1,0 +1,11 @@
+{
+    "showRecentlyVisited": false,
+    "showCircularIcon": true,
+    "useSolidBackground": false,
+    "backgroundColor": "#000000",
+    "useNetworkImage": false,
+    "useBingDailyImage": false,
+    "useWeather": true,
+    "defaultBackgroundImage": "/wallpaper/sun.webp",
+    "backgroundBrightness": "0"
+}
