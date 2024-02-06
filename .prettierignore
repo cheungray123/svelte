@@ -1,0 +1,10 @@
+.git
+.svn
+.hg
+node_modules
+
+.astro
+package.json
+package-lock.json
+pnpm-lock.yaml
+public

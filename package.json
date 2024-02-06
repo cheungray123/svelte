@@ -1,0 +1,24 @@
+{
+  "name": "new",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "rsbuild dev --open",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview",
+    "pd": "pnpm run dev"
+  },
+  "dependencies": {
+    "@iconify/svelte": "^3.1.6",
+    "@neodrag/svelte": "^2.0.3",
+    "autoprefixer": "^10.4.17",
+    "prettier-plugin-svelte": "^3.1.2",
+    "prettier-plugin-tailwindcss": "^0.5.11",
+    "svelte": "^4.2.10",
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "^0.3.11",
+    "@rsbuild/plugin-svelte": "^0.3.11"
+  }
+}
