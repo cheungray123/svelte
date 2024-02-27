@@ -3,31 +3,24 @@ import { getStorage, setStorage } from '../utils/storage'
 import { defaultConfig } from '../config'
 
 function createSettingStore() {
-    const LOCAL_STORAGE_KEY = 'settings'
-    const storedSettings = getStorage(LOCAL_STORAGE_KEY)
-    const { subscribe, update } = writable(storedSettings || defaultConfig)
+    const LOCAL_STORAGE_KEY = 'settings';
+    const storedSettings = getStorage(LOCAL_STORAGE_KEY);
+    const { subscribe, update } = writable(storedSettings || defaultConfig);
 
     return {
         subscribe,
-        handleChange(key, value) {
-            update((v) => {
-                if (!(key in v)) return v
-
-                let newValue
-                if (typeof v[key] === 'boolean') {
-                    newValue = !v[key]
-                } else if (typeof v[key] === 'string' && value !== null) {
-                    newValue = value
-                } else {
-                    newValue = v[key]
+        updateSetting(key, value) {
+            update((currentSettings) => {
+                // 只有在值发生变化时才更新
+                if (currentSettings[key] !== value) {
+                    const updatedConfig = { ...currentSettings, [key]: value };
+                    setStorage(LOCAL_STORAGE_KEY, updatedConfig);
+                    return updatedConfig;
                 }
-
-                const updatedConfig = { ...v, [key]: newValue }
-                setStorage(LOCAL_STORAGE_KEY, updatedConfig)
-                return updatedConfig
-            })
+                return currentSettings;
+            });
         }
-    }
+    };
 }
 
 export const settings = createSettingStore()
