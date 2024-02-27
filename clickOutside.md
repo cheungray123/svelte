@@ -39,3 +39,24 @@ export function clickOutside(node, { callback = () => {}, exclude = [] }) {
         }
     };
 }
+# 使用说明 (Usage Instructions)
+
+在你的Svelte组件中，使用use:指令将clickOutside动作绑定到元素上，并提供一个回调函数和任何你想要排除的元素。
+
+In your Svelte component, use the use: directive to attach the clickOutside action to an element, providing a callback function and any elements you wish to exclude.
+
+```javascript
+<script>
+  import { clickOutside } from './clickOutside.js';
+  let button;
+</script>
+
+<div use:clickOutside={{
+      callback: () => {
+        console.log('Clicked outside');
+      },
+      exclude: [button]
+}}>
+  <!-- Your content here -->
+  <button bind:this={button}>Click me, I'm excluded</button>
+</div>
