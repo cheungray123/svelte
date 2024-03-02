@@ -1,28 +1,26 @@
-import { writable } from 'svelte/store'
-import { getStorage, setStorage } from '../utils/storage'
-import { defaultConfig } from '../config'
+import { writable } from 'svelte/store';
+import { getStorage, setStorage } from '../utils/storage';
+import { defaultConfig } from '../config';
 
 function createSettingStore() {
     const LOCAL_STORAGE_KEY = 'settings';
-    const storedSettings = getStorage(LOCAL_STORAGE_KEY);
-    const { subscribe, update } = writable(storedSettings || defaultConfig);
+    const initialSettings = getStorage(LOCAL_STORAGE_KEY) || defaultConfig;
+    const { subscribe, set } = writable(initialSettings);
 
+    // 直接在返回的对象中定义方法
     return {
         subscribe,
-        updateSetting(key, value) {
-            update((currentSettings) => {
-                // 只有在值发生变化时才更新
+        updateSetting: (key, value) => {
+            set((currentSettings) => {
                 if (currentSettings[key] !== value) {
-                    const updatedConfig = { ...currentSettings, [key]: value };
-                    setStorage(LOCAL_STORAGE_KEY, updatedConfig);
-                    return updatedConfig;
+                    const updatedSettings = { ...currentSettings, [key]: value };
+                    setStorage(LOCAL_STORAGE_KEY, updatedSettings);
+                    return updatedSettings;
                 }
                 return currentSettings;
             });
-        }
+        },
     };
 }
 
-export const settings = createSettingStore()
-export let activeThing = writable('')
-export const openedApps = writable([])
+export const settings = createSettingStore();
